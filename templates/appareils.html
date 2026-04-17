@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Appareils Photo</h2>
+<hr>
+
+<h3>Amateur</h3>
+<ul class="list-group mb-4">
+    {% for app in amateur %}
+        <li class="list-group-item">{{ app.marque }} {{ app.modele }} ({{ app.date_sortie }}) - Score: {{ app.score }}/5</li>
+    {% else %}
+        <li class="list-group-item text-muted">Aucun appareil dans cette catégorie.</li>
+    {% endfor %}
+</ul>
+
+<h3>Amateur Sérieux</h3>
+<ul class="list-group mb-4">
+    {% for app in serieux %}
+        <li class="list-group-item">{{ app.marque }} {{ app.modele }} ({{ app.date_sortie }}) - Score: {{ app.score }}/5</li>
+    {% endfor %}
+</ul>
+
+<h3>Professionnel</h3>
+<ul class="list-group mb-4">
+    {% for app in pro %}
+        <li class="list-group-item">{{ app.marque }} {{ app.modele }} ({{ app.date_sortie }}) - Score: {{ app.score }}/5</li>
+    {% endfor %}
+</ul>
+{% endblock %}
